@@ -20,6 +20,6 @@ CREATE TABLE customers
 CREATE TABLE interests
 (
   id SERIAL8 primary key,
-  game_id INT8 references games(id),
-  customer_id INT8 references customers(id)
+  game_id INT8 references games(id) ON DELETE CASCADE,
+  customer_id INT8 references customers(id) ON DELETE CASCADE
 );

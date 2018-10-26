@@ -3,21 +3,23 @@ require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( '../models/interest.rb' )
 require_relative( '../models/customer.rb' )
-require_relative( '../models/game.rb' ))
-# also_reload( '../models/*' )
+require_relative( '../models/game.rb' )
+also_reload( '../models/*' )
 
-# get '/bitings' do
-#   @bitings = Biting.all
-#   @actions = Action.all
-#   erb ( :"bitings/index" )
-# end
-#
-# get '/bitings/new' do
-#   @victims = Victim.all
-#   @zombies = Zombie.all
-#   erb(:"bitings/new")
-# end
-#
+get '/heavybucketgames/games/jumper' do
+  erb ( :"jumper/home" )
+end
+
+get '/heavybucketgames/games/jumper/form' do
+    @customer = Customer.all()
+  erb(:"jumper/form")
+end
+
+post "/heavybucketgames/games/jumper" do
+   @customer = Customer.new(params)
+   @customer.save()
+   erb ( :thanks )
+end
 # post '/bitings' do
 #   biting = Biting.new(params)
 #   biting.save

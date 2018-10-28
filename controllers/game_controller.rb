@@ -37,17 +37,8 @@ post "/heavybucketgames/:id/delete" do
    Customer.delete( params[:id].to_i )
   redirect to "/"
 end
-# post 'heavybucketgames/delete/:id' do
-#     @customer = Customer.delete(params [:id])
-#     erb ( :delete )
-# end
 
 get '/heavybucketgames/games/find/:id' do # show
   @customer = Customer.find( params['id'].to_i )
   erb( :"game/find" )
 end
-
-# get '/victims/:id' do
-#   @victim = Victim.find(params['id'].to_i)
-#   erb( :"victims/show" )
-# end

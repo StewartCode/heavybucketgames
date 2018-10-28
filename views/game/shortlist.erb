@@ -1,2 +1,11 @@
 
 <p>has 50 spaces left</p>
+
+<% for game in @games %>
+<h1><%= game.title %></h1>
+<h1><% catch = game.customers[0]%></h1>
+<h1><%= catch.name %></h1>
+
+
+
+<% end %>

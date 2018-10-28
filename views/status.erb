@@ -5,6 +5,8 @@
 <p> Game : <%= c.title%> </p>
 <p> ID : <%= customer.id %> </p>
 
+<p>_______________________________________</p>
+
 
 <form method="post" action="/pass">
 
@@ -18,13 +20,22 @@
   <input type="submit" value="send">
 </form>
 
+
+
 <% end %>
+
+<p>_______________________________________</p>
 
 <h1>List of Interests</h1>
 <% for interest in @interests %>
-<p> game_id : <%= interest.game_id %> </p>
-<p> customer_id : <%= interest.customer_id %> </p>
+<p> game id : <%= interest.game_id %> </p>
+<p> customer id : <%= interest.customer_id %> </p>
+<p> customer name : <%= interest.customer.name %> </p>
+<p> game title : <%= interest.game.title %> </p>
+<p>______________________________________</p>
 <% end %>
+
+<p>_______________________________________</p>
 
 <h1>List of Games</h1>
 <% for game in @games %>
@@ -32,6 +43,11 @@
 <p> Title : <%= game.title %> </p>
 <p> Genre : <%= game.genre %> </p>
 <p> Release Date : <%= game.release_date %> </p>
+    <% a = game.customers[0] %>
+<p> Customers : <%= a.name %> </p>
+
+<p>_______________________________________</p>
+
 <% end %>
 
 <h1>Id_input</h1>

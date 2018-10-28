@@ -1,9 +1,11 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require( 'pry-byebug' )
 require_relative( '../models/customer.rb' )
 require_relative( '../models/game.rb' )
 require_relative( '../models/interest.rb' )
- also_reload( '../models/*' )
+require_relative( '../app.rb')
+also_reload( '../models/*' )
 
 get '/heavybucketgames/games/timefist' do
   erb ( :"timefist/home" )
@@ -17,5 +19,6 @@ end
 post "/heavybucketgames/games/timefist" do
    @customer = Customer.new(params)
    @customer.save()
-  erb ( :thanks )
+   @games = Game.all()
+   erb ( :"timefist/thanks" )
 end

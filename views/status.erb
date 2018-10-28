@@ -1,0 +1,40 @@
+<h1>List of Customers</h1>
+<% for customer in @customers %>
+<p> Name : <%= customer.name %> </p>
+<p> <% c = customer.games()[0] %> </p>
+<p> Game : <%= c.title%> </p>
+<p> ID : <%= customer.id %> </p>
+
+
+<form method="post" action="/pass">
+
+
+  <label for="id_input-field">Enter ID to Delete:</label>
+  <input
+  type="text"
+  name="id_input"
+  id="id_input-field"
+  />
+  <input type="submit" value="send">
+</form>
+
+<% end %>
+
+<h1>List of Interests</h1>
+<% for interest in @interests %>
+<p> game_id : <%= interest.game_id %> </p>
+<p> customer_id : <%= interest.customer_id %> </p>
+<% end %>
+
+<h1>List of Games</h1>
+<% for game in @games %>
+<p> ID : <%= game.id %> </p>
+<p> Title : <%= game.title %> </p>
+<p> Genre : <%= game.genre %> </p>
+<p> Release Date : <%= game.release_date %> </p>
+<% end %>
+
+<h1>Id_input</h1>
+<% for id in @id_inputs %>
+<p> ID : <%= id.id_input %> </p>
+<% end %>

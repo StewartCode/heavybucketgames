@@ -1,0 +1,8 @@
+<h1>Thanks for your interest <%=@customer.name%> , we will email you with the details</h1>
+<h1>please take a note of your customer number. We will email this to you incase you forget it, your number is <%=@customer.id%></h1>
+<% game = @games.find {|g| g.title == "time fist"}
+   @interest = Interest.new({
+            "game_id" => game.id,
+            "customer_id" => @customer.id
+          })
+@interest.save()  %>

@@ -1,6 +1,7 @@
 DROP TABLE interests;
 DROP TABLE games;
 DROP TABLE customers;
+DROP TABLE id_inputs;
 
 CREATE TABLE games
 (
@@ -22,4 +23,10 @@ CREATE TABLE interests
   id SERIAL8 primary key,
   game_id INT8 references games(id) ON DELETE CASCADE,
   customer_id INT8 references customers(id) ON DELETE CASCADE
+);
+
+CREATE TABLE id_inputs
+(
+  id SERIAL8 primary key,
+  id_input INT8
 );

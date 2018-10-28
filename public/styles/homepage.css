@@ -1,1 +1,15 @@
+.gamesbutton {
+        font-size: 30px;
+        margin-left: 250px;
+}
 
+.homebutton {
+        font-size: 30px;
+        margin-left: 50px;
+        margin-top: -35px;
+}
+.statusbutton {
+        font-size: 30px;
+        margin-left: 450px;
+        margin-top: -35px;
+}

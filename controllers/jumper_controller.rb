@@ -4,6 +4,7 @@ require( 'pry-byebug' )
 require_relative( '../models/interest.rb' )
 require_relative( '../models/customer.rb' )
 require_relative( '../models/game.rb' )
+require_relative( '../app.rb')
 also_reload( '../models/*' )
 
 get '/heavybucketgames/games/jumper' do
@@ -18,8 +19,15 @@ end
 post "/heavybucketgames/games/jumper" do
    @customer = Customer.new(params)
    @customer.save()
-   erb ( :thanks )
+   @games = Game.all()
+   erb ( :"jumper/thanks" )
 end
+
+# post '/heavybucketgames/games/jumper/interest' do
+#   interest = Interest.new(params)
+#   interest.save
+#   redirect to("/heavybucketgames/games/jumper")
+# end
 # post '/bitings' do
 #   biting = Biting.new(params)
 #   biting.save

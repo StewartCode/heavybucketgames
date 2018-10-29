@@ -1,0 +1,68 @@
+<h1>List of Customers</h1>
+<% for customer in @customers %>
+<p> <% c = customer.games()[0] %> </p>
+    <% if c.title == "jumper" %>
+<p> Name : <%= customer.name %> </p>
+<p> Game : <%= c.title%> </p>
+
+<form method="post" action="jumper/pass">
+
+  <label for="id_input-field">Enter ID to Delete:</label>
+  <input
+  type="number"
+  name="id_input"
+  id="id_input-field"
+  required><number>
+  />
+  <input type="submit" value="send">
+</form>
+
+<% else break %>
+<% end %>
+
+<p> ID : <%= customer.id %> </p>
+
+<p>_____________________________________</p>
+
+<% end %>
+
+
+
+<h1>List of Interests</h1>
+<% for interest in @interests %>
+<p> game id : <%= interest.game_id %> </p>
+<p> customer id : <%= interest.customer_id %> </p>
+<p> customer name : <%= interest.customer.name %> </p>
+<p> game title : <%= interest.game.title %> </p>
+<p>______________________________________</p>
+<% end %>
+
+
+
+<h1>List of Games</h1>
+<% for game in @games %>
+<p> ID : <%= game.id %> </p>
+<p> Title : <%= game.title %> </p>
+<p> Genre : <%= game.genre %> </p>
+<p> Release Date : <%= game.release_date %> </p>
+    <% a = game.customers[0] %>
+<p> Customers : <%= a %> </p>
+
+<p>_______________________________________</p>
+
+<% end %>
+
+<h1>Id_input</h1>
+<% for id in @id_inputs %>
+<p> ID : <%= id.id_input %> </p>
+<% end %>
+
+
+<p>______________________________________</p>
+
+<h1>Spaces</h1>
+<% for space in @spaces %>
+<p> jumper spaces : <%= space.jumper_spaces %> </p>
+<p> timefist_spaces : <%= space.timefist_spaces %> </p>
+<% break %>
+<% end %>

@@ -8,6 +8,7 @@ require_relative( '../app.rb')
 also_reload( '../models/*' )
 
 get '/heavybucketgames/games/jumper' do
+     @spaces = Space.all()
   erb ( :"jumper/home" )
 end
 
@@ -16,26 +17,57 @@ get '/heavybucketgames/games/jumper/form' do
   erb(:"jumper/form")
 end
 
+get '/jumper/status' do
+    @customers = Customer.all()
+    @interests = Interest.all()
+    @games = Game.all()
+    @id_inputs = Id_input.all()
+    @spaces = Space.all()
+    erb ( :"jumper/status" )
+end
+
 post "/heavybucketgames/games/jumper" do
    @customer = Customer.new(params)
    @customer.save()
    @games = Game.all()
+   @spaces = Space.all()
+   for space in @spaces
+   x = space.jumper_spaces.to_i
+   y = space.timefist_spaces.to_i
+   Space.delete_all
+   new = Space.new({
+           "jumper_spaces" => x -= 1,
+           "timefist_spaces" => y
+   })
+  new.save
+  break
+       end
 
    erb ( :"jumper/thanks" )
 end
 
-# post '/heavybucketgames/games/jumper/interest' do
-#   interest = Interest.new(params)
-#   interest.save
-#   redirect to("/heavybucketgames/games/jumper")
-# end
-# post '/bitings' do
-#   biting = Biting.new(params)
-#   biting.save
-#   redirect to("/bitings")
-# end
-#
-# post '/bitings/:id/delete' do
-#   Biting.destroy(params[:id])
-#   redirect to("/bitings")
-# end
+post "/heavybucketgames/jumper/:id/delete" do
+   Customer.delete( params[:id].to_i )
+   @spaces = Space.all()
+   for space in @spaces
+   x = space.jumper_spaces.to_i
+   y = space.timefist_spaces.to_i
+   Space.delete_all
+   new = Space.new({
+           "jumper_spaces" => x += 1,
+           "timefist_spaces" => y
+   })
+  new.save
+  break
+       end
+
+  redirect to "/"
+end
+
+post "/jumper/jumper/pass" do
+  @interests = Interest.all()
+  @games = Game.all()
+  @id_input = Id_input.new(params)
+  @id_input.save()
+ erb :"jumper/delete"
+end

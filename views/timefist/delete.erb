@@ -1,11 +1,9 @@
-
-
 <% result = 0 %>
      <% for interest in @interests %>
      <% if interest.customer_id == @id_input.id_input.to_i %>
      <%  result = @id_input.id_input %>
 
-     <form method="post" action="/heavybucketgames/<%= result %>/delete">
+     <form method="post" action="/heavybucketgames/timefist/<%= result %>/delete">
        <div class="delete">
        <input type="submit" value="Delete Order"/>
      </form>

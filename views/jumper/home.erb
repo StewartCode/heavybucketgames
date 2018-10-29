@@ -1,2 +1,10 @@
 <h1>Jumper</h1>
-<a href=/heavybucketgames/games/jumper/form>Apply for beta testing</a>
+
+<% for space in @spaces %>
+    <% if space.jumper_spaces == "0" %>
+      <p>sorry no spaces left</p>
+    <% else %>
+    <a href=/heavybucketgames/games/jumper/form>Apply for beta testing</a>
+    <% break %>
+    <% end %>
+<% end %>

@@ -29,20 +29,7 @@ get '/status' do
     erb ( :status )
 end
 
-post "/pass" do
-  @interests = Interest.all()
-  @games = Game.all()
-  @id_input = Id_input.new(params)
-  @id_input.save()
- erb :delete
-end
-
-post "/heavybucketgames/:id/delete" do
-   Customer.delete( params[:id].to_i )
-  redirect to "/"
-end
-
-get '/heavybucketgames/games/find/:id' do # show
+get '/heavybucketgames/games/find/:id' do 
   @customer = Customer.find( params['id'].to_i )
   erb( :"game/find" )
 end

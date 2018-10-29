@@ -8,8 +8,13 @@
         margin-left: 50px;
         margin-top: -35px;
 }
-.statusbutton {
+.statusbuttonjumper {
         font-size: 30px;
         margin-left: 450px;
+        margin-top: -35px;
+}
+.statusbuttontimefist {
+        font-size: 30px;
+        margin-left: 700px;
         margin-top: -35px;
 }

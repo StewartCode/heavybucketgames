@@ -1,2 +1,10 @@
 <h1>Timefist</h1>
-<a href=/heavybucketgames/games/timefist/form>Apply for beta testing</a>
+
+<% for space in @spaces %>
+    <% if space.timefist_spaces == "0" %>
+      <p>sorry no spaces left</p>
+    <% else %>
+    <a href=/heavybucketgames/games/timefist/form>Apply for beta testing</a>
+    <% end %>
+    <% break %>
+<% end %>

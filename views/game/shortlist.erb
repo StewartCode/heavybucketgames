@@ -1,10 +1,16 @@
 
-<p>has 50 spaces left</p>
+<%counter_jumper = @games.map{|x|x.jumper_spaces}%>
+<p> <%counter_jumper[0]%> </p>
+<%counter_timefist = @games.map{|y|y.timefist_spaces}%>
+<p> <%counter_timefist[0]%> </p>
+
+<p><% jumper = @games.find {|x| x.title == "jumper"} %><%= jumper.title %> has <%=counter_jumper[0]%> spaces left</p>
+<p><% timefist = @games.find {|x| x.title == "time fist"} %><%= timefist.title %> has <%=counter_timefist[0]%> spaces left</p>
 
 <% for game in @games %>
-<h1><%= game.title %></h1>
+<h1><% game.title %></h1>
 <h1><% catch = game.customers[0]%></h1>
-<h1><%= catch.name %></h1>
+<h1><% catch %></h1>
 
 
 

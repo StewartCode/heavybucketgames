@@ -28,6 +28,7 @@ end
 
 post "/pass" do
   @interests = Interest.all()
+  @games = Game.all()
   @id_input = Id_input.new(params)
   @id_input.save()
  erb :delete

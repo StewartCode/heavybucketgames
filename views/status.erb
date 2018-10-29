@@ -5,7 +5,7 @@
 <p> Game : <%= c.title%> </p>
 <p> ID : <%= customer.id %> </p>
 
-<p>_______________________________________</p>
+
 
 
 <form method="post" action="/pass">
@@ -20,11 +20,11 @@
   <input type="submit" value="send">
 </form>
 
-
+<p>_____________________________________</p>
 
 <% end %>
 
-<p>_______________________________________</p>
+
 
 <h1>List of Interests</h1>
 <% for interest in @interests %>
@@ -35,16 +35,18 @@
 <p>______________________________________</p>
 <% end %>
 
-<p>_______________________________________</p>
+
 
 <h1>List of Games</h1>
+<%= @games[0].timefist_spaces() %>
+<%= @games[0].jumper_spaces() %>
 <% for game in @games %>
 <p> ID : <%= game.id %> </p>
 <p> Title : <%= game.title %> </p>
 <p> Genre : <%= game.genre %> </p>
 <p> Release Date : <%= game.release_date %> </p>
     <% a = game.customers[0] %>
-<p> Customers : <%= a.name %> </p>
+<p> Customers : <%= a %> </p>
 
 <p>_______________________________________</p>
 

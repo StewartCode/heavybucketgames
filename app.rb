@@ -10,16 +10,21 @@ Game.delete_all()
 @game1 = Game.new({
   "title" => "time fist",
   "genre" => "comedy adventure",
-  "release_date" => "01/01/2019"
+  "release_date" => "01/01/2019",
+  "jumper_spaces" => 20,
+  "timefist_spaces" => 20
 })
 @game1.save
 
 @game2 = Game.new({
   "title" => "jumper",
   "genre" => "platformer",
-  "release_date" => "02/07/2019"
+  "release_date" => "02/07/2019",
+  "jumper_spaces" => 20,
+  "timefist_spaces" => 20
 })
 @game2.save
+
 
 # @game3 = Game.new({
 #   "title" => "adventure tale",

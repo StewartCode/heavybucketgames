@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Game
 
-  attr_accessor( :title, :genre, :release_date )
+  attr_accessor( :title, :genre, :release_date, :jumper_spaces, :timefist_spaces)
   attr_reader(:id)
 
 
@@ -11,6 +11,8 @@ class Game
     @title = options['title']
     @genre = options['genre']
     @release_date = options['release_date']
+    @jumper_spaces = options['jumper_spaces']
+    @timefist_spaces = options['timefist_spaces']
   end
 
   def save()
@@ -18,14 +20,16 @@ class Game
     (
       title,
       genre,
-      release_date
+      release_date,
+      jumper_spaces,
+      timefist_spaces
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@title, @genre, @release_date]
+    values = [@title, @genre, @release_date, @jumper_spaces, @timefist_spaces]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
   end
@@ -65,6 +69,14 @@ class Game
     WHERE id = $1"
     values = [id]
     SqlRunner.run( sql, values )
+  end
+
+def timefist_spaces_left(x)
+    return x += @timefist_spaces
+  end
+
+def jumper_spaces_left(x)
+    return x += @jumper_spaces
   end
 
 end

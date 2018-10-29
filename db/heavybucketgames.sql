@@ -8,7 +8,9 @@ CREATE TABLE games
   id SERIAL8 primary key,
   title VARCHAR(255),
   genre VARCHAR(255),
-  release_date VARCHAR(255)
+  release_date VARCHAR(255),
+  jumper_spaces INT8,
+  timefist_spaces INT8
 );
 
 CREATE TABLE customers

@@ -2,6 +2,7 @@ DROP TABLE interests;
 DROP TABLE games;
 DROP TABLE customers;
 DROP TABLE id_inputs;
+DROP TABLE spaces;
 
 CREATE TABLE games
 (
@@ -31,4 +32,11 @@ CREATE TABLE id_inputs
 (
   id SERIAL8 primary key,
   id_input INT8
+);
+
+CREATE TABLE spaces
+(
+  id SERIAL8 primary key,
+  jumper_spaces INT8,
+  timefist_spaces INT8
 );

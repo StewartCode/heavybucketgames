@@ -13,9 +13,10 @@
 
   <label for="id_input-field">Enter ID to Delete:</label>
   <input
-  type="text"
+  type="number"
   name="id_input"
   id="id_input-field"
+  required><number>
   />
   <input type="submit" value="send">
 </form>
@@ -38,8 +39,6 @@
 
 
 <h1>List of Games</h1>
-<%= @games[0].timefist_spaces() %>
-<%= @games[0].jumper_spaces() %>
 <% for game in @games %>
 <p> ID : <%= game.id %> </p>
 <p> Title : <%= game.title %> </p>
@@ -55,4 +54,14 @@
 <h1>Id_input</h1>
 <% for id in @id_inputs %>
 <p> ID : <%= id.id_input %> </p>
+<% end %>
+
+
+<p>______________________________________</p>
+
+<h1>Spaces</h1>
+<% for space in @spaces %>
+<p> jumper spaces : <%= space.jumper_spaces %> </p>
+<p> timefist_spaces : <%= space.timefist_spaces %> </p>
+<% break %>
 <% end %>

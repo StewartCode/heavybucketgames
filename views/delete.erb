@@ -9,13 +9,18 @@
        <div class="delete">
        <input type="submit" value="Delete Order"/>
      </form>
+
 <h1> <%= result %></h1>
       <% break %>
-
-       <% else result = "Please try again" %>
+       <% elsif result = "Please try again" %>
        <%= result %>
        <a href="/status">Back></a>
         <% break %>
+        <% else result = "" %>
+        <a href="/status">Back></a>
+         <% break %>
+
+
 
      <% end %>
 <% end %>

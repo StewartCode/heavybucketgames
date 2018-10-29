@@ -31,6 +31,20 @@ class Id_input
     return results.map { |i| Id_input.new( i ) }
   end
 
+  def update()
+    sql = "UPDATE id_inputs
+    SET
+    (
+      id_input
+    ) =
+    (
+      $1
+    )
+    WHERE id = $2"
+    values = [@id_input, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.find( id )
     sql = "SELECT * FROM id_inputs
     WHERE id = $1"

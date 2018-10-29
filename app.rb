@@ -11,8 +11,6 @@ Game.delete_all()
   "title" => "time fist",
   "genre" => "comedy adventure",
   "release_date" => "01/01/2019",
-  "jumper_spaces" => 20,
-  "timefist_spaces" => 20
 })
 @game1.save
 
@@ -20,10 +18,15 @@ Game.delete_all()
   "title" => "jumper",
   "genre" => "platformer",
   "release_date" => "02/07/2019",
-  "jumper_spaces" => 20,
-  "timefist_spaces" => 20
 })
 @game2.save
+
+
+@space = Space.new({
+          "jumper_spaces" => 20,
+          "timefist_spaces" => 20
+  })
+@space.save
 
 
 # @game3 = Game.new({

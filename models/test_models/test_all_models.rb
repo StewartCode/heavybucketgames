@@ -1,7 +1,9 @@
 require("minitest/autorun")
+require( 'pry-byebug' )
 require_relative("../customer.rb")
 require_relative("../game.rb")
 require_relative("../interest.rb")
+require_relative("../space.rb")
 
 class TestAllModels < MiniTest::Test
 
@@ -9,24 +11,30 @@ class TestAllModels < MiniTest::Test
     @game1 = Game.new({
       "title" => "time fist",
       "genre" => "comedy adventure",
-      "release_date" => "01/01/2019",
-      "jumper_spaces" => 20,
-      "timefist_spaces" => 20
+      "release_date" => "01/01/2019"
     })
     @game1.save
 
+  @space = Space.new({
+            "jumper_spaces" => 20,
+            "timefist_spaces" => 20
+    })
+  @space.save
+
   end
 
-
   def test_spaces()
-      result = @game1.jumper_spaces_left(-1)
+      result = @space.jumper_spaces_left(-1)
       assert_equal(19, result)
   end
 
   def test_spaces_2()
-      result = @game1.timefist_spaces_left(1)
+      result = @space.timefist_spaces_left(1)
       assert_equal(21, result)
   end
 
 
 end
+
+# binding.pry
+# nil

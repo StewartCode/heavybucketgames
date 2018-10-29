@@ -20,6 +20,7 @@ post "/heavybucketgames/games/jumper" do
    @customer = Customer.new(params)
    @customer.save()
    @games = Game.all()
+
    erb ( :"jumper/thanks" )
 end
 

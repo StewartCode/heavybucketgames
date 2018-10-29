@@ -9,6 +9,8 @@ also_reload( '../models/*' )
 
 get '/heavybucketgames/games/jumper' do
      @spaces = Space.all()
+     @customers = Customer.all()
+     @games = Game.all()
   erb ( :"jumper/home" )
 end
 

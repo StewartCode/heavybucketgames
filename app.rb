@@ -29,13 +29,6 @@ Game.delete_all()
 @space.save
 
 
-# @game3 = Game.new({
-#   "title" => "adventure tale",
-#   "genre" => "ebook",
-#   "release_date" => "09/03/2019"
-# })
-# @game3.save
-
 get '/' do
   erb( :index )
 end

@@ -28,6 +28,14 @@ get '/jumper/status' do
     erb ( :"jumper/status" )
 end
 
+get '/heavybucketgames/games/jumper/shortlist' do
+   @interests = Interest.all()
+   @games = Game.all()
+   @customers = Customer.all()
+   @spaces = Space.all()
+  erb ( :"jumper/shortlist" )
+end
+
 post "/heavybucketgames/games/jumper" do
    @customer = Customer.new(params)
    @customer.save()
@@ -66,7 +74,7 @@ post "/heavybucketgames/jumper/:id/delete" do
   redirect to "/"
 end
 
-post "/jumper/jumper/pass" do
+post "/heavybucketgames/games/jumper/jumper/pass" do
   @interests = Interest.all()
   @games = Game.all()
   @id_input = Id_input.new(params)

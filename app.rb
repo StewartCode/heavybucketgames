@@ -16,7 +16,7 @@ Game.delete_all()
 
 @game2 = Game.new({
   "title" => "jumper",
-  "genre" => "platformer",
+  "genre" => "adventure",
   "release_date" => "02/07/2019",
 })
 @game2.save

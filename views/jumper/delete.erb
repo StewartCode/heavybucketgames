@@ -1,3 +1,5 @@
+<div class="delete">
+
 <% result = 0 %>
      <% for interest in @interests %>
      <% if interest.customer_id == @id_input.id_input.to_i %>
@@ -12,13 +14,15 @@
       <% break %>
        <% elsif result = "Please try again" %>
        <%= result %>
-       <a href="/status">Back></a>
+       <a href="/heavybucketgames/games/jumper/shortlist">Back></a>
         <% break %>
         <% else result = "" %>
-        <a href="/status">Back></a>
+        <a href="/heavybucketgames/games/jumper/shortlist">Back></a>
          <% break %>
 
 
 
      <% end %>
 <% end %>
+
+</div>

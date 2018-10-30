@@ -1,3 +1,6 @@
+<div class="thanks">
+
+
 <h1>Thanks for your interest <%=@customer.name%> , we will email you with the details</h1>
 <h1>please take a note of your customer number. We will email this to you incase you forget it, your number is <%=@customer.id%></h1>
 <% game = @games.find {|g| g.title == "jumper"}
@@ -6,3 +9,7 @@
             "customer_id" => @customer.id
           })
 @interest.save()  %>
+
+<a href="/jumper/status">Back></a>
+
+</div>

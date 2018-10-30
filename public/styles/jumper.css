@@ -1,3 +1,34 @@
+.status {
+  color : white;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 23px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+.delete {
+  color : white;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 23px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+.button1 {
+  color : white;
+}
+
+.button2 {
+  color : white;
+}
+
+.jumperhome {
+  color : white;
+}
 /* td, th {
   text-align: left;
 }

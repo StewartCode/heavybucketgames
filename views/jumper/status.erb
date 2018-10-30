@@ -1,3 +1,24 @@
+<div class="statusvisible">
+
+  <% for space in @spaces %>
+  <p> Jumper Beta Keys Left : <%= space.jumper_spaces %> </p>
+  <% break %>
+  <% end %>
+
+  <% for game in @games %>
+  <%   if game.title == "jumper" %>
+  <p> Release Date : <%= game.release_date %> </p>
+       <% else next %>
+       <% end %>
+  <% break %>
+<% end %>
+
+
+</div>
+
+<div class="statusinvisible">
+
+
 <h1>List of Customers</h1>
 <% for customer in @customers %>
 <p> <% c = customer.games()[0] %> </p>
@@ -60,9 +81,4 @@
 
 <p>______________________________________</p>
 
-<h1>Spaces</h1>
-<% for space in @spaces %>
-<p> jumper spaces : <%= space.jumper_spaces %> </p>
-<p> timefist_spaces : <%= space.timefist_spaces %> </p>
-<% break %>
-<% end %>
+</div>

@@ -1,42 +1,41 @@
 .allbuttons {
-border: solid 1px black;
+  border: solid 0px black;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
 
 }
 
-
 .homebutton {
-        color: white;
-        font-size: 18px;
-        margin: 0 auto;
-        margin-left: 50px;
-        margin-top: -22px;
+  color: white;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
 
 
 }
 
 .gamesbutton {
-        color: white;
-        font-size: 18px;
-        margin: 0 auto;
-        margin-left: 250px;
-        margin-top: 0px;
+  color: white;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
 
 }
 
 .statusbuttonjumper {
-        color: white;
-        font-size: 18px;
-        margin: 0 auto;
-        margin-left: 450px;
-        margin-top: -22px;
+  color: white;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+
 
 }
 .statusbuttontimefist {
         color: white;
-        font-size: 18px;
-        margin: 0 auto;
-        margin-left: 700px;
-        margin-top: -22px;
+        flex: 1;
+        padding: 10px;
+        text-align: center;
 
 }
 

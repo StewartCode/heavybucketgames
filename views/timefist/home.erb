@@ -1,3 +1,11 @@
+<body>
+
+
+
+<div class="timefisthome">
+
+
+
 <h1>Timefist</h1>
 
 
@@ -10,3 +18,17 @@
     <% end %>
     <% break %>
 <% end %>
+
+
+<% for space in @spaces %>
+    <% if space.timefist_spaces == "10" %>
+      <p></p>
+    <% else %>
+    <a href=/heavybucketgames/games/timefist/shortlist>View Accepted Testers</a>
+    <% end %>
+    <% break %>
+<% end %>
+
+</div>
+
+</body>

@@ -1,3 +1,43 @@
+.statusvisible {
+  color : white;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 23px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+.statusinvisible {
+  color : white;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 23px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 50px;
+  visibility: hidden;
+
+}
+
+.delete {
+  color : white;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 23px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+.timefisthome {
+  color : white;
+}
+
+.thanks {
+  color : white;
+}
+
 /* body {
   background: black url('/images/background.jpg');
   background-size: 100%;

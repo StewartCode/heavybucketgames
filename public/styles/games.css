@@ -1,8 +1,14 @@
 
 .timefist {
+  color: white;
+  margin-left: auto;
+  margin-left: 17px;
+  margin-top: 140px;
+
 
 }
-.tincircus {
+.jumper {
+      color: white;
       margin-left: auto;
       margin-left: 17px;
       margin-top: 140px;
@@ -12,6 +18,15 @@
   margin-left: auto;
   margin-left: 17px;
   margin-top: 140px;
+}
+
+.shortlist {
+  color : white;
+}
+
+.gamesindex {
+
+  color : white;
 }
 /* .btn {
   border:0px none;

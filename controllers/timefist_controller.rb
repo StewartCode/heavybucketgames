@@ -28,6 +28,14 @@ get '/timefist/status' do
     erb ( :"timefist/status" )
 end
 
+get '/heavybucketgames/games/timefist/shortlist' do
+   @interests = Interest.all()
+   @games = Game.all()
+   @customers = Customer.all()
+   @spaces = Space.all()
+  erb ( :"timefist/shortlist" )
+end
+
 post "/heavybucketgames/games/timefist" do
    @customer = Customer.new(params)
    @customer.save()
@@ -65,7 +73,7 @@ post "/heavybucketgames/timefist/:id/delete" do
   redirect to "/"
 end
 
-post "/timefist/timefist/pass" do
+post "/heavybucketgames/games/timefist/timefist/pass" do
   @interests = Interest.all()
   @games = Game.all()
   @id_input = Id_input.new(params)

@@ -1,0 +1,36 @@
+<div class="shortlist">
+
+<h1>
+
+  <h1>List of Customers</h1>
+  <% for customer in @customers %>
+  <p> <% c = customer.games()[0] %> </p>
+      <% if c.title == "jumper" %>
+  <p> Name : <%= customer.name %> </p>
+  <p> Game : <%= c.title%> </p>
+
+  <form method="post" action="jumper/pass">
+
+    <label for="id_input-field">Enter ID to Delete:</label>
+    <input
+    type="number"
+    name="id_input"
+    id="id_input-field"
+    required><number>
+    />
+    <input type="submit" value="send">
+  </form>
+
+  <% else break %>
+  <% end %>
+
+  <p> ID : <%= customer.id %> </p>
+
+  <p>_____________________________________</p>
+
+  <% end %>
+
+ </h1>
+
+
+ </div>

@@ -1,3 +1,11 @@
+<body>
+
+
+
+<div class="jumperhome">
+
+
+
 <h1>Jumper</h1>
 
 <% for space in @spaces %>
@@ -8,3 +16,19 @@
     <% break %>
     <% end %>
 <% end %>
+
+
+<% for space in @spaces %>
+    <% if space.jumper_spaces == "10" %>
+      <p></p>
+    <% else %>
+    <a href=/heavybucketgames/games/jumper/shortlist>View Accepted Testers</a>
+    <% end %>
+    <% break %>
+<% end %>
+
+
+
+</div>
+
+</body>
